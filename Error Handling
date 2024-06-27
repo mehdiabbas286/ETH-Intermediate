@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.25;
+
+contract ErrorHandling {
+
+    function UPSC_Require(uint age) public pure {
+        require(age > 21, "Age greater than 21 required to apply for UPSC");
+    }
+
+    function UPSC_Revert(uint age) public pure {
+        if (age <= 21) {
+            revert("Age less than 21, cannot apply for UPSC");
+        }
+    }
+
+    function UPSC_Assert(uint age) public pure {
+        
+        assert(age>21);
+    }
+}
